@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MessageUI
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

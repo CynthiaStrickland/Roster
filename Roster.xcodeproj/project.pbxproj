@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		3D2FC5EC1BAE238F009DB5D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FC5EB1BAE238F009DB5D6 /* AppDelegate.swift */; };
 		3D2FC5EE1BAE238F009DB5D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FC5ED1BAE238F009DB5D6 /* ViewController.swift */; };
-		3D2FC5F11BAE238F009DB5D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FC5EF1BAE238F009DB5D6 /* Main.storyboard */; };
 		3D2FC5F31BAE2390009DB5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FC5F21BAE2390009DB5D6 /* Assets.xcassets */; };
 		3D2FC5F61BAE2390009DB5D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D2FC5F41BAE2390009DB5D6 /* LaunchScreen.storyboard */; };
-		3D2FC6011BAE2390009DB5D6 /* TableDemoLyndaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FC6001BAE2390009DB5D6 /* TableDemoLyndaTests.swift */; };
 		3D2FC60C1BAE2390009DB5D6 /* TableDemoLyndaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FC60B1BAE2390009DB5D6 /* TableDemoLyndaUITests.swift */; };
+		3D2FC61A1BAE3926009DB5D6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2FC6191BAE3926009DB5D6 /* DetailViewController.swift */; };
+		3DACE5B31BAFC69D00A2B3B4 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DACE5B21BAFC69D00A2B3B4 /* MessageUI.framework */; };
+		3DE6420D1BAE7C9D00E5A31E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE6420C1BAE7C9D00E5A31E /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +35,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D2FC5E81BAE238F009DB5D6 /* TableDemoLynda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableDemoLynda.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2FC5E81BAE238F009DB5D6 /* Roster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2FC5EB1BAE238F009DB5D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D2FC5ED1BAE238F009DB5D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3D2FC5F01BAE238F009DB5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3D2FC5F21BAE2390009DB5D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D2FC5F51BAE2390009DB5D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D2FC5F71BAE2390009DB5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D2FC5FC1BAE2390009DB5D6 /* TableDemoLyndaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableDemoLyndaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3D2FC6001BAE2390009DB5D6 /* TableDemoLyndaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDemoLyndaTests.swift; sourceTree = "<group>"; };
-		3D2FC6021BAE2390009DB5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D2FC6071BAE2390009DB5D6 /* TableDemoLyndaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableDemoLyndaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2FC5FC1BAE2390009DB5D6 /* Roster.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roster.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D2FC6071BAE2390009DB5D6 /* Roster.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Roster.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D2FC60B1BAE2390009DB5D6 /* TableDemoLyndaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDemoLyndaUITests.swift; sourceTree = "<group>"; };
 		3D2FC60D1BAE2390009DB5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D2FC6191BAE3926009DB5D6 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3DACE5B21BAFC69D00A2B3B4 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		3DE6420C1BAE7C9D00E5A31E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DACE5B31BAFC69D00A2B3B4 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,9 +79,8 @@
 		3D2FC5DF1BAE238D009DB5D6 = {
 			isa = PBXGroup;
 			children = (
-				3D2FC5EA1BAE238F009DB5D6 /* TableDemoLynda */,
-				3D2FC5FF1BAE2390009DB5D6 /* TableDemoLyndaTests */,
-				3D2FC60A1BAE2390009DB5D6 /* TableDemoLyndaUITests */,
+				3D2FC5EA1BAE238F009DB5D6 /* Roster */,
+				3D2FC60A1BAE2390009DB5D6 /* RosterTests */,
 				3D2FC5E91BAE238F009DB5D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -87,50 +88,45 @@
 		3D2FC5E91BAE238F009DB5D6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D2FC5E81BAE238F009DB5D6 /* TableDemoLynda.app */,
-				3D2FC5FC1BAE2390009DB5D6 /* TableDemoLyndaTests.xctest */,
-				3D2FC6071BAE2390009DB5D6 /* TableDemoLyndaUITests.xctest */,
+				3D2FC5E81BAE238F009DB5D6 /* Roster.app */,
+				3D2FC5FC1BAE2390009DB5D6 /* Roster.xctest */,
+				3D2FC6071BAE2390009DB5D6 /* Roster.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3D2FC5EA1BAE238F009DB5D6 /* TableDemoLynda */ = {
+		3D2FC5EA1BAE238F009DB5D6 /* Roster */ = {
 			isa = PBXGroup;
 			children = (
+				3DE6420C1BAE7C9D00E5A31E /* Main.storyboard */,
 				3D2FC5EB1BAE238F009DB5D6 /* AppDelegate.swift */,
 				3D2FC5ED1BAE238F009DB5D6 /* ViewController.swift */,
-				3D2FC5EF1BAE238F009DB5D6 /* Main.storyboard */,
+				3D2FC6191BAE3926009DB5D6 /* DetailViewController.swift */,
 				3D2FC5F21BAE2390009DB5D6 /* Assets.xcassets */,
 				3D2FC5F41BAE2390009DB5D6 /* LaunchScreen.storyboard */,
 				3D2FC5F71BAE2390009DB5D6 /* Info.plist */,
+				3DACE5B21BAFC69D00A2B3B4 /* MessageUI.framework */,
 			);
+			name = Roster;
 			path = TableDemoLynda;
 			sourceTree = "<group>";
 		};
-		3D2FC5FF1BAE2390009DB5D6 /* TableDemoLyndaTests */ = {
-			isa = PBXGroup;
-			children = (
-				3D2FC6001BAE2390009DB5D6 /* TableDemoLyndaTests.swift */,
-				3D2FC6021BAE2390009DB5D6 /* Info.plist */,
-			);
-			path = TableDemoLyndaTests;
-			sourceTree = "<group>";
-		};
-		3D2FC60A1BAE2390009DB5D6 /* TableDemoLyndaUITests */ = {
+		3D2FC60A1BAE2390009DB5D6 /* RosterTests */ = {
 			isa = PBXGroup;
 			children = (
 				3D2FC60B1BAE2390009DB5D6 /* TableDemoLyndaUITests.swift */,
 				3D2FC60D1BAE2390009DB5D6 /* Info.plist */,
 			);
+			name = RosterTests;
 			path = TableDemoLyndaUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3D2FC5E71BAE238F009DB5D6 /* TableDemoLynda */ = {
+		3D2FC5E71BAE238F009DB5D6 /* Roster */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D2FC6101BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "TableDemoLynda" */;
+			buildConfigurationList = 3D2FC6101BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "Roster" */;
 			buildPhases = (
 				3D2FC5E41BAE238F009DB5D6 /* Sources */,
 				3D2FC5E51BAE238F009DB5D6 /* Frameworks */,
@@ -140,14 +136,14 @@
 			);
 			dependencies = (
 			);
-			name = TableDemoLynda;
+			name = Roster;
 			productName = TableDemoLynda;
-			productReference = 3D2FC5E81BAE238F009DB5D6 /* TableDemoLynda.app */;
+			productReference = 3D2FC5E81BAE238F009DB5D6 /* Roster.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3D2FC5FB1BAE2390009DB5D6 /* TableDemoLyndaTests */ = {
+		3D2FC5FB1BAE2390009DB5D6 /* RosterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D2FC6131BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "TableDemoLyndaTests" */;
+			buildConfigurationList = 3D2FC6131BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "RosterTests" */;
 			buildPhases = (
 				3D2FC5F81BAE2390009DB5D6 /* Sources */,
 				3D2FC5F91BAE2390009DB5D6 /* Frameworks */,
@@ -158,14 +154,14 @@
 			dependencies = (
 				3D2FC5FE1BAE2390009DB5D6 /* PBXTargetDependency */,
 			);
-			name = TableDemoLyndaTests;
+			name = RosterTests;
 			productName = TableDemoLyndaTests;
-			productReference = 3D2FC5FC1BAE2390009DB5D6 /* TableDemoLyndaTests.xctest */;
+			productReference = 3D2FC5FC1BAE2390009DB5D6 /* Roster.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		3D2FC6061BAE2390009DB5D6 /* TableDemoLyndaUITests */ = {
+		3D2FC6061BAE2390009DB5D6 /* RosterUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3D2FC6161BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "TableDemoLyndaUITests" */;
+			buildConfigurationList = 3D2FC6161BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "RosterUITests" */;
 			buildPhases = (
 				3D2FC6031BAE2390009DB5D6 /* Sources */,
 				3D2FC6041BAE2390009DB5D6 /* Frameworks */,
@@ -176,9 +172,9 @@
 			dependencies = (
 				3D2FC6091BAE2390009DB5D6 /* PBXTargetDependency */,
 			);
-			name = TableDemoLyndaUITests;
+			name = RosterUITests;
 			productName = TableDemoLyndaUITests;
-			productReference = 3D2FC6071BAE2390009DB5D6 /* TableDemoLyndaUITests.xctest */;
+			productReference = 3D2FC6071BAE2390009DB5D6 /* Roster.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -187,6 +183,7 @@
 		3D2FC5E01BAE238D009DB5D6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Cynthia Whitlatch";
 				TargetAttributes = {
@@ -203,7 +200,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3D2FC5E31BAE238D009DB5D6 /* Build configuration list for PBXProject "TableDemoLynda" */;
+			buildConfigurationList = 3D2FC5E31BAE238D009DB5D6 /* Build configuration list for PBXProject "Roster" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -216,9 +213,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3D2FC5E71BAE238F009DB5D6 /* TableDemoLynda */,
-				3D2FC5FB1BAE2390009DB5D6 /* TableDemoLyndaTests */,
-				3D2FC6061BAE2390009DB5D6 /* TableDemoLyndaUITests */,
+				3D2FC5E71BAE238F009DB5D6 /* Roster */,
+				3D2FC5FB1BAE2390009DB5D6 /* RosterTests */,
+				3D2FC6061BAE2390009DB5D6 /* RosterUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,9 +225,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE6420D1BAE7C9D00E5A31E /* Main.storyboard in Resources */,
 				3D2FC5F61BAE2390009DB5D6 /* LaunchScreen.storyboard in Resources */,
 				3D2FC5F31BAE2390009DB5D6 /* Assets.xcassets in Resources */,
-				3D2FC5F11BAE238F009DB5D6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D2FC61A1BAE3926009DB5D6 /* DetailViewController.swift in Sources */,
 				3D2FC5EE1BAE238F009DB5D6 /* ViewController.swift in Sources */,
 				3D2FC5EC1BAE238F009DB5D6 /* AppDelegate.swift in Sources */,
 			);
@@ -264,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D2FC6011BAE2390009DB5D6 /* TableDemoLyndaTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,25 +278,17 @@
 /* Begin PBXTargetDependency section */
 		3D2FC5FE1BAE2390009DB5D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D2FC5E71BAE238F009DB5D6 /* TableDemoLynda */;
+			target = 3D2FC5E71BAE238F009DB5D6 /* Roster */;
 			targetProxy = 3D2FC5FD1BAE2390009DB5D6 /* PBXContainerItemProxy */;
 		};
 		3D2FC6091BAE2390009DB5D6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3D2FC5E71BAE238F009DB5D6 /* TableDemoLynda */;
+			target = 3D2FC5E71BAE238F009DB5D6 /* Roster */;
 			targetProxy = 3D2FC6081BAE2390009DB5D6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3D2FC5EF1BAE238F009DB5D6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3D2FC5F01BAE238F009DB5D6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3D2FC5F41BAE2390009DB5D6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -401,7 +390,7 @@
 				INFOPLIST_FILE = TableDemoLynda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cynthia.TableDemoLynda;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Roster;
 			};
 			name = Debug;
 		};
@@ -412,7 +401,7 @@
 				INFOPLIST_FILE = TableDemoLynda/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cynthia.TableDemoLynda;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Roster;
 			};
 			name = Release;
 		};
@@ -423,8 +412,8 @@
 				INFOPLIST_FILE = TableDemoLyndaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cynthia.TableDemoLyndaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableDemoLynda.app/TableDemoLynda";
+				PRODUCT_NAME = Roster;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roster.app/Roster";
 			};
 			name = Debug;
 		};
@@ -435,8 +424,8 @@
 				INFOPLIST_FILE = TableDemoLyndaTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cynthia.TableDemoLyndaTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TableDemoLynda.app/TableDemoLynda";
+				PRODUCT_NAME = Roster;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Roster.app/Roster";
 			};
 			name = Release;
 		};
@@ -446,7 +435,7 @@
 				INFOPLIST_FILE = TableDemoLyndaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cynthia.TableDemoLyndaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Roster;
 				TEST_TARGET_NAME = TableDemoLynda;
 				USES_XCTRUNNER = YES;
 			};
@@ -458,7 +447,7 @@
 				INFOPLIST_FILE = TableDemoLyndaUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cynthia.TableDemoLyndaUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Roster;
 				TEST_TARGET_NAME = TableDemoLynda;
 				USES_XCTRUNNER = YES;
 			};
@@ -467,7 +456,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3D2FC5E31BAE238D009DB5D6 /* Build configuration list for PBXProject "TableDemoLynda" */ = {
+		3D2FC5E31BAE238D009DB5D6 /* Build configuration list for PBXProject "Roster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D2FC60E1BAE2390009DB5D6 /* Debug */,
@@ -476,29 +465,32 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3D2FC6101BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "TableDemoLynda" */ = {
+		3D2FC6101BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "Roster" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D2FC6111BAE2390009DB5D6 /* Debug */,
 				3D2FC6121BAE2390009DB5D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		3D2FC6131BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "TableDemoLyndaTests" */ = {
+		3D2FC6131BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "RosterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D2FC6141BAE2390009DB5D6 /* Debug */,
 				3D2FC6151BAE2390009DB5D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		3D2FC6161BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "TableDemoLyndaUITests" */ = {
+		3D2FC6161BAE2390009DB5D6 /* Build configuration list for PBXNativeTarget "RosterUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3D2FC6171BAE2390009DB5D6 /* Debug */,
 				3D2FC6181BAE2390009DB5D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

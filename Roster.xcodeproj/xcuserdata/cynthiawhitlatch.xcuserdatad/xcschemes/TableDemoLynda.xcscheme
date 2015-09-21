@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D2FC5E71BAE238F009DB5D6"
-               BuildableName = "TableDemoLynda.app"
-               BlueprintName = "TableDemoLynda"
-               ReferencedContainer = "container:TableDemoLynda.xcodeproj">
+               BuildableName = "Roster.app"
+               BlueprintName = "Roster"
+               ReferencedContainer = "container:Roster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D2FC5FB1BAE2390009DB5D6"
-               BuildableName = "TableDemoLyndaTests.xctest"
-               BlueprintName = "TableDemoLyndaTests"
-               ReferencedContainer = "container:TableDemoLynda.xcodeproj">
+               BuildableName = "Roster.xctest"
+               BlueprintName = "RosterTests"
+               ReferencedContainer = "container:Roster.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D2FC6061BAE2390009DB5D6"
-               BuildableName = "TableDemoLyndaUITests.xctest"
-               BlueprintName = "TableDemoLyndaUITests"
-               ReferencedContainer = "container:TableDemoLynda.xcodeproj">
+               BuildableName = "Roster.xctest"
+               BlueprintName = "RosterUITests"
+               ReferencedContainer = "container:Roster.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D2FC5E71BAE238F009DB5D6"
-            BuildableName = "TableDemoLynda.app"
-            BlueprintName = "TableDemoLynda"
-            ReferencedContainer = "container:TableDemoLynda.xcodeproj">
+            BuildableName = "Roster.app"
+            BlueprintName = "Roster"
+            ReferencedContainer = "container:Roster.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D2FC5E71BAE238F009DB5D6"
-            BuildableName = "TableDemoLynda.app"
-            BlueprintName = "TableDemoLynda"
-            ReferencedContainer = "container:TableDemoLynda.xcodeproj">
+            BuildableName = "Roster.app"
+            BlueprintName = "Roster"
+            ReferencedContainer = "container:Roster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D2FC5E71BAE238F009DB5D6"
-            BuildableName = "TableDemoLynda.app"
-            BlueprintName = "TableDemoLynda"
-            ReferencedContainer = "container:TableDemoLynda.xcodeproj">
+            BuildableName = "Roster.app"
+            BlueprintName = "Roster"
+            ReferencedContainer = "container:Roster.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
