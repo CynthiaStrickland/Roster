@@ -1,6 +1,5 @@
 //
-//  TableDemoLyndaUITests.swift
-//  TableDemoLyndaUITests
+//  RosterTest.swift
 //
 //  Created by Cynthia Whitlatch on 9/19/15.
 //  Copyright © 2015 Cynthia Whitlatch. All rights reserved.
@@ -8,7 +7,7 @@
 
 import XCTest
 
-class TableDemoLyndaUITests: XCTestCase {
+class RosterTest: XCTestCase {
         
     override func setUp() {
         super.setUp()

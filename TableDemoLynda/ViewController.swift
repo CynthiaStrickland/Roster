@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  TableDemoLynda
+//  
 //
 //  Created by Cynthia Whitlatch on 9/19/15.
 //  Copyright © 2015 Cynthia Whitlatch. All rights reserved.
