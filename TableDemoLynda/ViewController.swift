@@ -54,15 +54,14 @@ class ViewController: UIViewController, UITableViewDataSource {
       cell.detailTextLabel?.text = emailRoster
     }
       return cell
+    //test
   }
   
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     if section == 0 {
       
       return "Male Students"
-      
     } else {
-      
       return "Female Students"
     }
   }
