@@ -102,12 +102,10 @@ class ViewController: UIViewController, UITableViewDataSource {
     if section == 0 {
       
       return maleRoster.count
-      return photos.count
       
     } else {
       
       return femaleRoster.count
-      return photos.count
     }
   }
   
@@ -116,11 +114,16 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     if indexPath.section == 0 {
       let(nameRoster,emailRoster) = maleRoster[indexPath.row]
+      let currentPhoto = photos[indexPath.row]
+      cell.textLabel?.text = currentPhoto.name
       cell.textLabel?.text = nameRoster
       cell.detailTextLabel?.text = emailRoster
+      
 
     } else {
       let(nameRoster,emailRoster) = femaleRoster[indexPath.row]
+      let currentPhoto = photos[indexPath.row]
+      cell.textLabel?.text = currentPhoto.name
       cell.textLabel?.text = nameRoster
       cell.detailTextLabel?.text = emailRoster
     }
