@@ -1,4 +1,3 @@
-//
 //  DetailViewController.swift
 //
 //  Created by Cynthia Whitlatch on 9/19/15.
@@ -8,10 +7,20 @@
 import UIKit
 import MessageUI
 
+var currentPhoto : Photo?
+
 class DetailViewController: UIViewController {
+  
+  @IBOutlet weak var studentImage: UIImageView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let image = UIImage(named: currentPhoto!.filename)
+    studentImage.image = image
+   
+    self.title = currentPhoto!.name
+
   }
   
   override func didReceiveMemoryWarning() {
@@ -24,8 +33,7 @@ class DetailViewController: UIViewController {
     messageVC.messageComposeDelegate = self
     
     self.presentViewController(messageVC, animated: true, completion: nil)
-  }
-  
+  }  
 }
 
 extension DetailViewController: MFMessageComposeViewControllerDelegate {
@@ -45,10 +53,7 @@ extension DetailViewController: MFMessageComposeViewControllerDelegate {
     }
   }
 }
-
-
-
-    /*
+  /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

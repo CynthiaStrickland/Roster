@@ -17,7 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
+    
+        //****** Navigation Bar Color
+    UINavigationBar.appearance().barTintColor = UIColor .blackColor()
+    
+        //****** Navigation Bar Color *******
+    UINavigationBar.appearance().tintColor = UIColor.redColor()
+    
+        // ******** Navigation Bar Button Color *****
+    UIBarButtonItem.appearance().tintColor = UIColor .redColor()
+    
+        // *******  Status Bar Style Change ******
+    UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+    
     return true
   }
 
