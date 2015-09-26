@@ -31,7 +31,6 @@ class ViewController: UIViewController, UITableViewDataSource {
     let image = UIImage(named: "codefellows")
     imageView.image = image
     navigationItem.titleView = imageView
-
     
     var newPhoto = Photo(name:"Fox", filename:"fox300.jpg")
     photos.append(newPhoto)
@@ -71,6 +70,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     newPhoto = Photo(name:"Alligator", filename:"alligator300.jpg")
     photos.append(newPhoto)
+    
     
   }
   
@@ -121,23 +121,23 @@ class ViewController: UIViewController, UITableViewDataSource {
         label.text = "Female Students"
         label.textColor = UIColor.blueColor()
       }
+        return label.text
     }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath:indexPath)
     
+    var currentPhoto = photos[indexPath.row]
+    cell.textLabel?.text = currentPhoto.name
+    
     if indexPath.section == 0 {
       let(nameRoster,emailRoster) = maleRoster[indexPath.row]
-      let currentPhoto = photos[indexPath.row]
-      cell.textLabel?.text = currentPhoto.name
       cell.textLabel?.text = nameRoster
       cell.detailTextLabel?.text = emailRoster
       
 
     } else {
       let(nameRoster,emailRoster) = femaleRoster[indexPath.row]
-      let currentPhoto = photos[indexPath.row]
-      cell.textLabel?.text = currentPhoto.name
       cell.textLabel?.text = nameRoster
       cell.detailTextLabel?.text = emailRoster
     }
@@ -147,9 +147,33 @@ class ViewController: UIViewController, UITableViewDataSource {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
     var secondScene = segue.destinationViewController as! DetailViewController
-    if let indexPath = self.tableView.indexPathForSelectedRow! {
+    if indexPath = self.tableView.indexPathForSelectedRow! {
     let selectedPhoto = photos[indexPath.row]
     secondScene.currentPhoto = selectedPhoto
   }  
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
