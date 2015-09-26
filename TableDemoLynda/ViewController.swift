@@ -18,6 +18,9 @@ var photos = [Photo]()
 
 class ViewController: UIViewController, UITableViewDataSource {
   
+  @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var label: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -130,15 +133,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     return cell
   }
   
+  
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     if section == 0 {
-      
-      return "Male Students"
-    } else {
-      return "Female Students"
+      label.text = "Male Students"
+      label.textColor = UIColor.blueColor()
+    } else if section == 1 {
+      label.text = "Female Students"
+      label.textColor = UIColor.blueColor()
+    }
+    
+//      return "Male Students"
+//    } else {
+//      return "Female Students"
     }
   }
-}
 
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
