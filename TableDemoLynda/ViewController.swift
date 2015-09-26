@@ -24,6 +24,7 @@ class ViewController: UIViewController, UITableViewDataSource {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+        // ***** Nav Title Image *******
     self.navigationController?.navigationBar
     let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
     imageView.contentMode = .ScaleAspectFit
@@ -106,11 +107,21 @@ class ViewController: UIViewController, UITableViewDataSource {
       
       return maleRoster.count
       
-    } else {
+    } else if section == 1 {
       
       return femaleRoster.count
     }
   }
+  
+  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+      if section == 0 {
+        label.text = "Male Students"
+        label.textColor = UIColor.blueColor()
+      } else if section == 1 {
+        label.text = "Female Students"
+        label.textColor = UIColor.blueColor()
+      }
+    }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath:indexPath)
@@ -132,42 +143,13 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     return cell
   }
-  
-  
-  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    if section == 0 {
-      label.text = "Male Students"
-      label.textColor = UIColor.blueColor()
-    } else if section == 1 {
-      label.text = "Female Students"
-      label.textColor = UIColor.blueColor()
-    }
-    
-//      return "Male Students"
-//    } else {
-//      return "Female Students"
-    }
-  }
 
-  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
     var secondScene = segue.destinationViewController as! DetailViewController
-    if let indexPath = self.tableView.indexPathForSelectedRow() {
+    if let indexPath = self.tableView.indexPathForSelectedRow! {
     let selectedPhoto = photos[indexPath.row]
     secondScene.currentPhoto = selectedPhoto
   }  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
