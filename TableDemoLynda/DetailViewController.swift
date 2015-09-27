@@ -20,7 +20,6 @@ class DetailViewController: UIViewController {
     studentImage.image = image
    
     self.title = currentPhoto!.name
-
   }
   
   override func didReceiveMemoryWarning() {

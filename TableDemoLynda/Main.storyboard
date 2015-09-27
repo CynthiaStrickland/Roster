@@ -84,7 +84,8 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="tableView" destination="ewb-1b-rX2" id="ydV-UQ-Vw6"/>
+                        <outlet property="label" destination="UgE-Pu-aXg" id="Ymc-Ap-9Vz"/>
+                        <outlet property="tableView" destination="ewb-1b-rX2" id="QOD-f9-khI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
