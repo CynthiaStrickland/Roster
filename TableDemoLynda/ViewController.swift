@@ -42,8 +42,9 @@ let femaleRoster = [
 class ViewController: UIViewController, UITableViewDataSource {
   
   @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var label: UILabel!
   
+  @IBOutlet weak var label: UILabel!
+
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -129,7 +130,6 @@ class ViewController: UIViewController, UITableViewDataSource {
       cell.textLabel?.text = nameRoster
       cell.detailTextLabel?.text = emailRoster
       
-
     } else {
       let(nameRoster,emailRoster) = femaleRoster[indexPath.row]
       cell.textLabel?.text = nameRoster
@@ -143,13 +143,10 @@ class ViewController: UIViewController, UITableViewDataSource {
 }
 
   func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-    var secondScene = segue.destinationViewController as! DetailViewController
-    
-    if let indexPath = self.tableView.indexPathForSelectedRow {
-      let selectedPhoto = photos[indexPath.row]
-      secondScene.currentPhoto = selectedPhoto
-    }
+      let secondScene = segue.destinationViewController as! DetailViewController
+      if let indexPath = self.tableView.indexPathForSelectedRow {
+        let selectedPhoto = photos[indexPath.row]
+        secondScene.currentPhoto = selectedPhoto
   }
 
 
