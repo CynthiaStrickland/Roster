@@ -39,7 +39,7 @@ let femaleRoster = [
   ("Lynn Kuhlman", "lynnkuhlman@gmail.com")
 ]
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
@@ -83,7 +83,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     newPhoto = Photo(name:"Zebra", filename:"zebra300.jpg")
     photos.append(newPhoto)
     
-    newPhoto = Photo(name:"Elephan", filename:"elephant300.jpg")
+    newPhoto = Photo(name:"Elephant", filename:"elephant300.jpg")
     photos.append(newPhoto)
     
     newPhoto = Photo(name:"Racoon", filename:"racoon300.jpg")
@@ -94,6 +94,8 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     newPhoto = Photo(name:"Alligator", filename:"alligator300.jpg")
     photos.append(newPhoto)
+    
+
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -109,18 +111,19 @@ class ViewController: UIViewController, UITableViewDataSource {
       
       return femaleRoster.count
     }
+      return 0
   }
   
-  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-      if section == 0 {
-        label.text = "Male Students"
-        label.textColor = UIColor.blueColor()
-      } else if section == 1 {
-        label.text = "Female Students"
-        label.textColor = UIColor.blueColor()
-      }
-        return label.text
-    }
+//  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//      if section == 0 {
+//        label.text = "Male Students"
+//        label.textColor = UIColor.blueColor()
+//      } else if section == 1 {
+//        label.text = "Female Students"
+//        label.textColor = UIColor.blueColor()
+//      }
+//        return label.text
+//    }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath:indexPath)
@@ -134,20 +137,22 @@ class ViewController: UIViewController, UITableViewDataSource {
       let(nameRoster,emailRoster) = femaleRoster[indexPath.row]
       cell.textLabel?.text = nameRoster
       cell.detailTextLabel?.text = emailRoster
-      
+    
       let currentPhoto = photos[indexPath.row]
       cell.textLabel?.text = currentPhoto.name
+
     }
     return cell
   }
-}
 
-  func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
       let secondScene = segue.destinationViewController as! DetailViewController
       if let indexPath = self.tableView.indexPathForSelectedRow {
         let selectedPhoto = photos[indexPath.row]
         secondScene.currentPhoto = selectedPhoto
+    }
   }
+}
 
 
 

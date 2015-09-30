@@ -7,9 +7,10 @@
 import UIKit
 import MessageUI
 
-var currentPhoto : Photo?
+
 
 class DetailViewController: UIViewController {
+  var currentPhoto : Photo?
   
   @IBOutlet weak var studentImage: UIImageView!
   
