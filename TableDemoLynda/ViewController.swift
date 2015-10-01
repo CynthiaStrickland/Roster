@@ -8,6 +8,7 @@
 
 import UIKit
 import MessageUI
+import Social
 
 struct Photo {
   var name : String
@@ -47,6 +48,9 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+        //***** SET NAVIGATION BAR BUTTON PROGRAMMATICALLY
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .Plain, target: self, action: "tappedShare:")
     
         // ***** Nav Title Image *******
     self.navigationController?.navigationBar
@@ -94,8 +98,31 @@ class ViewController: UIViewController {
     
     newPhoto = Photo(name:"Alligator", filename:"alligator300.jpg")
     photos.append(newPhoto)
+  }
+  
+      // METHOD TO HANDLE SHARE BUTTON
+  
+  func tappedShare(sender : AnyObject!) {
+    let composeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+    composeViewController.addImage(UIImage(named: "codefellows30"))
+    composeViewController.setInitialText("Check out Code Fellows")
+    composeViewController.addURL(NSURL(string: "http://www.codefellows.com"))
+      
+    presentViewController(composeViewController, animated: true, completion:nil)
     
-
+//    vc.setInitialText("Look at this great picture!")
+//    vc.addImage(detailImageView.image!)
+//    vc.addURL(NSURL(string: "http://www.photolib.noaa.gov/nssl"))
+    
+  }
+  
+  func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+    switch section {
+    case 0:
+      return "Male Students"
+    default:
+      return "Female Students"
+    }
   }
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -138,24 +165,30 @@ class ViewController: UIViewController {
       cell.textLabel?.text = nameRoster
       cell.detailTextLabel?.text = emailRoster
     
-      let currentPhoto = photos[indexPath.row]
-      cell.textLabel?.text = currentPhoto.name
+//      let currentPhoto = photos[indexPath.row]
+//      cell.textLabel?.text = currentPhoto.name
 
     }
     return cell
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "detail" {                 //Use this to check - best practice
+      
       let secondScene = segue.destinationViewController as! DetailViewController
-      if let indexPath = self.tableView.indexPathForSelectedRow {
-        let selectedPhoto = photos[indexPath.row]
-        secondScene.currentPhoto = selectedPhoto
+      let selectedIndexPath = self.tableView.indexPathForSelectedRow
+      let selectedRow = selectedIndexPath!.row
+      let selectedPhoto = photos[selectedRow]
+      secondScene.currentPhoto = selectedPhoto
     }
   }
 }
 
-
-
+//      secondScene.selectedName = "Brad"
+//      let selectedIndexPath = tableView.indexPathForSelectedRow
+//      let selectedRow = selectedIndexPath!.row
+//      let selectedName = names[selectedRow]
+//      secondScene.view.backgroundColor = UIColor.greenColor()
 
 
 
