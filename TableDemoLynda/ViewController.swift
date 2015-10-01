@@ -13,6 +13,7 @@ import Social
 struct Photo {
   var name : String
   var filename : String
+
 }
 
 var photos = [Photo]()
@@ -189,6 +190,11 @@ class ViewController: UIViewController {
       let selectedRow = selectedIndexPath!.row
       let selectedPhoto = photos[selectedRow]
       secondScene.currentPhoto = selectedPhoto
+      
+    } else if segue.identifier == "newstudent" {
+      
+      var newStudentScene = segue.destinationViewController as! NewStudentViewController
+      
     }
   }
 }

@@ -11,9 +11,12 @@ import Foundation
 class Person {
   var firstName: String
   var lastName: String
+  var newStudent: String
   
-  init(studentsFirstName: String, studentsLastName: String) {
+  init(studentsFirstName: String, studentsLastName: String, newStudentsName: String) {
     firstName = studentsFirstName
     lastName = studentsLastName
+    newStudent = newStudentsName
+    
   }
 }
