@@ -12,7 +12,9 @@ import MessageUI
 class DetailViewController: UIViewController {
   
   var currentPhoto : Photo?
-  
+
+  @IBOutlet weak var firstName: UILabel!
+  @IBOutlet weak var lastName: UILabel!
   @IBOutlet weak var studentImage: UIImageView!
   
   override func viewDidLoad() {

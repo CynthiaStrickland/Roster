@@ -100,7 +100,7 @@ class ViewController: UIViewController {
     photos.append(newPhoto)
   }
   
-      // METHOD TO HANDLE SHARE BUTTON
+      // METHOD TO HANDLE SHARE BUTTON -  FACEBOOK .. image, initial text & URL
   
   func tappedShare(sender : AnyObject!) {
     let composeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
@@ -114,6 +114,12 @@ class ViewController: UIViewController {
 //    vc.addImage(detailImageView.image!)
 //    vc.addURL(NSURL(string: "http://www.photolib.noaa.gov/nssl"))
     
+  }
+      //   DELETING STUDENT FROM TABLEVIEW BY SWIPING
+  
+  func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    if (editingStyle == UITableViewCellEditingStyle.Delete) {
+    }
   }
   
   func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
