@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VK5-CI-ujM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -169,7 +168,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsC-OC-2OR">
-                                <rect key="frame" x="90" y="456" width="45" height="47"/>
+                                <rect key="frame" x="90" y="466" width="45" height="47"/>
                                 <state key="normal" title="Emai Me" image="Blue copy 2"/>
                                 <connections>
                                     <action selector="emailMe:" destination="TTR-FM-fHD" eventType="touchUpInside" id="sc8-ZE-aYe"/>
@@ -181,7 +180,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Send me an email" textAlignment="center" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="Lwv-lf-Ape">
-                                <rect key="frame" x="129" y="465" width="178" height="30"/>
+                                <rect key="frame" x="129" y="475" width="178" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -190,40 +189,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lincoln 285" translatesAutoresizingMaskIntoConstraints="NO" id="ja9-Dn-o1B">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Lincoln 285" translatesAutoresizingMaskIntoConstraints="NO" id="ja9-Dn-o1B">
                                 <rect key="frame" x="67" y="138" width="240" height="352"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul7-Ou-Re8">
-                                <rect key="frame" x="67" y="110" width="241" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="NXU-v0-Q2g"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-yW-V63">
+                                <rect key="frame" x="58" y="102" width="241" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-yW-V63">
-                                <rect key="frame" x="67" y="86" width="241" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="uja-Wh-WbD"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul7-Ou-Re8">
+                                <rect key="frame" x="58" y="129" width="241" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ja9-Dn-o1B" firstAttribute="centerX" secondItem="b2v-yb-vAg" secondAttribute="centerX" id="8hg-YA-kgl"/>
-                            <constraint firstItem="ul7-Ou-Re8" firstAttribute="leading" secondItem="5Oe-yW-V63" secondAttribute="leading" id="QhA-b4-xcT"/>
-                            <constraint firstItem="ja9-Dn-o1B" firstAttribute="top" secondItem="ul7-Ou-Re8" secondAttribute="bottom" constant="7" id="SEB-zH-E8r"/>
-                            <constraint firstItem="5Oe-yW-V63" firstAttribute="top" secondItem="2Iu-NY-3Af" secondAttribute="bottom" constant="22" id="UlU-fx-jeu"/>
-                            <constraint firstItem="ul7-Ou-Re8" firstAttribute="centerX" secondItem="b2v-yb-vAg" secondAttribute="centerX" id="XQ5-sF-TmW"/>
-                            <constraint firstItem="ul7-Ou-Re8" firstAttribute="top" secondItem="5Oe-yW-V63" secondAttribute="bottom" constant="3" id="b6f-5b-Gcf"/>
-                            <constraint firstItem="5Oe-yW-V63" firstAttribute="leading" secondItem="b2v-yb-vAg" secondAttribute="leadingMargin" constant="51" id="dEt-sF-wUg"/>
-                            <constraint firstItem="5Oe-yW-V63" firstAttribute="centerX" secondItem="b2v-yb-vAg" secondAttribute="centerX" id="jj2-eM-YrI"/>
-                            <constraint firstItem="ul7-Ou-Re8" firstAttribute="leading" secondItem="ja9-Dn-o1B" secondAttribute="leading" id="tbb-YD-tLl"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="fDM-2H-B28">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="91A-Le-OQH"/>

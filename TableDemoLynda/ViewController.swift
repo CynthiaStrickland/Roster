@@ -118,7 +118,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     return true
   }
       //   NEED THIS TO ADD SWIPE CELL TO SHARE/DELETE
-  func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+  func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
     
     if editingStyle == UITableViewCellEditingStyle.Delete {
 //      maleRoster.removeAtIndex(indexPath.row)
@@ -126,10 +126,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
   }
   
-  func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]! {
-    
+  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+  
     // ************  SWIPE TO DELETE   ***********
-
     let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") {
       (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
       
@@ -151,8 +150,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     shareAction.backgroundColor = UIColor.blueColor()
     return [shareAction, deleteAction]
   }
-  
-  func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
+
+      //   TITLE FOR HEADER
+  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     switch section {
     case 0:
       return "Male Students"
@@ -176,6 +176,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
       return 0
   }
+      // *********  DID SELECT ROW AT INDEX ****  Segue for Tuples
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     let (firstName, lastName, emailRoster) = maleRoster[indexPath.row]
@@ -184,6 +185,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
   }
+  
+  
 //  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //      if section == 0 {
 //        label.text = "Male Students"
@@ -207,23 +210,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       let(firstName, lastName, emailRoster) = femaleRoster[indexPath.row]
       cell.textLabel?.text = "\(firstName) \(lastName)"
       cell.detailTextLabel?.text = emailRoster
-    
-//      let currentPhoto = photos[indexPath.row]
-//      cell.textLabel?.text = currentPhoto.name
-
     }
     
     return cell
 }
-  
-
+    // *********  SEGUE ************
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "detail" {                 //Use this to check - best practice
       
       let secondScene = segue.destinationViewController as! DetailViewController
+      
       let selectedIndexPath = self.tableView.indexPathForSelectedRow
       let selectedRow = selectedIndexPath!.row
       let selectedPhoto = photos[selectedRow]
+      
+//      destinationViewController.selectedPhoto = selectedPhoto
       secondScene.currentPhoto = selectedPhoto
       
     } else if segue.identifier == "newstudent" {

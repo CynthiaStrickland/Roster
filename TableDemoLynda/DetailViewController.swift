@@ -13,8 +13,7 @@ class DetailViewController: UIViewController {
   
   var selectedFirstName = "None"
   var selectedLastName = "None"
-  
-  
+  var selectedPhoto : Photo?
   var currentPhoto : Photo?
 
   @IBOutlet weak var firstName: UILabel!
