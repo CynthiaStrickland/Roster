@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VK5-CI-ujM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -54,6 +55,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="wSe-cW-p3n"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="tor-ZH-rEL"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -125,17 +127,29 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="New Student" id="XvX-G4-Vtk">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sKj-2u-8e0"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lm8-Cj-VRV"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="sKj-2u-8e0">
+                            <connections>
+                                <action selector="cancelBarButton:" destination="waq-j5-MFY" id="xKH-UD-TUa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="lm8-Cj-VRV">
+                            <connections>
+                                <action selector="doneBarButton:" destination="waq-j5-MFY" id="Ypm-td-ufF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="female" destination="jKS-AI-ZC6" id="D51-vp-goU"/>
+                        <outlet property="male" destination="e0q-CT-u2M" id="9xo-pM-s0w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mt9-gr-jj3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.5" y="1119.5"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Title-->
         <scene sceneID="azm-RW-IMf">
             <objects>
                 <viewController id="TTR-FM-fHD" customClass="DetailViewController" customModule="Roster" customModuleProvider="target" sceneMemberID="viewController">
@@ -176,17 +190,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Lincoln 285" translatesAutoresizingMaskIntoConstraints="NO" id="ja9-Dn-o1B">
-                                <rect key="frame" x="67" y="138" width="240" height="295"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lincoln 285" translatesAutoresizingMaskIntoConstraints="NO" id="ja9-Dn-o1B">
+                                <rect key="frame" x="67" y="138" width="240" height="352"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul7-Ou-Re8">
-                                <rect key="frame" x="67" y="110" width="122" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ul7-Ou-Re8">
+                                <rect key="frame" x="67" y="110" width="241" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NXU-v0-Q2g"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-yW-V63">
-                                <rect key="frame" x="67" y="86" width="110" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Oe-yW-V63">
+                                <rect key="frame" x="67" y="86" width="241" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="uja-Wh-WbD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -196,10 +216,18 @@
                         <constraints>
                             <constraint firstItem="ja9-Dn-o1B" firstAttribute="centerX" secondItem="b2v-yb-vAg" secondAttribute="centerX" id="8hg-YA-kgl"/>
                             <constraint firstItem="ul7-Ou-Re8" firstAttribute="leading" secondItem="5Oe-yW-V63" secondAttribute="leading" id="QhA-b4-xcT"/>
+                            <constraint firstItem="ja9-Dn-o1B" firstAttribute="top" secondItem="ul7-Ou-Re8" secondAttribute="bottom" constant="7" id="SEB-zH-E8r"/>
+                            <constraint firstItem="5Oe-yW-V63" firstAttribute="top" secondItem="2Iu-NY-3Af" secondAttribute="bottom" constant="22" id="UlU-fx-jeu"/>
                             <constraint firstItem="ul7-Ou-Re8" firstAttribute="centerX" secondItem="b2v-yb-vAg" secondAttribute="centerX" id="XQ5-sF-TmW"/>
+                            <constraint firstItem="ul7-Ou-Re8" firstAttribute="top" secondItem="5Oe-yW-V63" secondAttribute="bottom" constant="3" id="b6f-5b-Gcf"/>
+                            <constraint firstItem="5Oe-yW-V63" firstAttribute="leading" secondItem="b2v-yb-vAg" secondAttribute="leadingMargin" constant="51" id="dEt-sF-wUg"/>
                             <constraint firstItem="5Oe-yW-V63" firstAttribute="centerX" secondItem="b2v-yb-vAg" secondAttribute="centerX" id="jj2-eM-YrI"/>
+                            <constraint firstItem="ul7-Ou-Re8" firstAttribute="leading" secondItem="ja9-Dn-o1B" secondAttribute="leading" id="tbb-YD-tLl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="fDM-2H-B28">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="91A-Le-OQH"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="firstName" destination="5Oe-yW-V63" id="goM-eO-qOr"/>

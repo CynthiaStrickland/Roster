@@ -5,7 +5,7 @@
 //  Created by Cynthia Whitlatch on 9/19/15.
 //  Copyright © 2015 Cynthia Whitlatch. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import MessageUI
 import Social
@@ -13,7 +13,6 @@ import Social
 struct Photo {
   var name : String
   var filename : String
-
 }
 
 var photos = [Photo]()
@@ -50,8 +49,8 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-        //***** SET NAVIGATION BAR BUTTON PROGRAMMATICALLY
-    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .Plain, target: self, action: "tappedShare:")
+//        //***** SET NAVIGATION BAR BUTTON PROGRAMMATICALLY
+//    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .Plain, target: self, action: "tappedShare:")
     
         // ***** Nav Title Image *******
     self.navigationController?.navigationBar
@@ -103,27 +102,47 @@ class ViewController: UIViewController {
   
       // METHOD TO HANDLE SHARE BUTTON -  FACEBOOK .. image, initial text & URL
   
-  func tappedShare(sender : AnyObject!) {
-    let composeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-    composeViewController.addImage(UIImage(named: "codefellows30"))
-    composeViewController.setInitialText("Check out Code Fellows")
-    composeViewController.addURL(NSURL(string: "http://www.codefellows.com"))
-      
-    presentViewController(composeViewController, animated: true, completion:nil)
-    
+//  func tappedShare(sender : AnyObject!) {
+//    let composeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+//    composeViewController.addImage(UIImage(named: "codefellows30"))
+//    composeViewController.setInitialText("Check out Code Fellows")
+//    composeViewController.addURL(NSURL(string: "http://www.codefellows.com"))
+//      
+//    presentViewController(composeViewController, animated: true, completion:nil)
+  
 //    vc.setInitialText("Look at this great picture!")
 //    vc.addImage(detailImageView.image!)
 //    vc.addURL(NSURL(string: "http://www.photolib.noaa.gov/nssl"))
     
-  }
+//  }
       //   DELETING STUDENT FROM TABLEVIEW BY SWIPING
   func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
     return true
   }
-  
+      //   NEED THIS TO ADD SWIPE CELL TO SHARE/DELETE
   func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-    if (editingStyle == UITableViewCellEditingStyle.Delete) {
     }
+  
+  func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]! {
+    
+    let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") {
+      (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+      
+      let firstActivityItem = maleRoster[indexPath.row]
+      let activityViewController = UIActivityViewController(activityItems: ["Brad"], applicationActivities: nil)
+      self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    let shareAction = UITableViewRowAction(style: .Normal, title: "Share") {
+      (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+    
+      let secondActivityItem = maleRoster[indexPath.row]
+      let activityViewController = UIActivityViewController(activityItems: ["Brad"], applicationActivities: nil)
+      self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
+    shareAction.backgroundColor = UIColor.blueColor()
+    return [shareAction, deleteAction]
   }
   
   func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String! {
@@ -179,8 +198,9 @@ class ViewController: UIViewController {
 //      cell.textLabel?.text = currentPhoto.name
 
     }
+    
     return cell
-  }
+}
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "detail" {                 //Use this to check - best practice
@@ -197,14 +217,15 @@ class ViewController: UIViewController {
       
     }
   }
-}
+    
+
 
 //      secondScene.selectedName = "Brad"
 //      let selectedIndexPath = tableView.indexPathForSelectedRow
 //      let selectedRow = selectedIndexPath!.row
 //      let selectedName = names[selectedRow]
 //      secondScene.view.backgroundColor = UIColor.greenColor()
-
+}
 
 
 
