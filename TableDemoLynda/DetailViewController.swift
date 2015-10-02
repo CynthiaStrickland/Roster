@@ -11,6 +11,10 @@ import MessageUI
 
 class DetailViewController: UIViewController {
   
+  var selectedFirstName = "None"
+  var selectedLastName = "None"
+  
+  
   var currentPhoto : Photo?
 
   @IBOutlet weak var firstName: UILabel!
@@ -19,6 +23,9 @@ class DetailViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    firstName.text = selectedFirstName
+    lastName.text = selectedLastName
     
     let image = UIImage(named: currentPhoto!.filename)    //creating a property to hold image
     studentImage.image = image

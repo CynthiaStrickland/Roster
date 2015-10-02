@@ -18,34 +18,32 @@ struct Photo {
 var photos = [Photo]()
 
 let maleRoster = [
-  ("Jackson Chu", "jackson@gmail.com"),
-  ("Alan", "alan@gmail.com"),
-  ("Antonio Garcia", "antoniogarcia@gmail.com"),
-  ("Francisco Ragland Jr", "franciscoragland@gmail.com"),
-  ("William Berry", "williamberry@gmail.com"),
-  ("David Gardner", "dpgardner10@gmail.com"),
-  ("Rob Hunsaker", "hunsaker.rob@gmail.com"),
-  ("Van Allen Hurst", "vanallenhurst@gmail.com"),
-  ("Roman Salazard", "romansalazar@gmail.com"),
-  ("Vincent Smithers", "vincentsmithers@gmail.com"),
-  ("Brian Ward", "brianward@gmail.com"),
-  ("Cooper Whitlow", "cooperwhitlow@gmail.com")
+  ("Jackson", "Chu", "jackson@gmail.com"),
+  ("Alan", "", "alan@gmail.com"),
+  ("Antonio", "Garcia", "antoniogarcia@gmail.com"),
+  ("Francisco", "Ragland Jr", "franciscoragland@gmail.com"),
+  ("William", "Berry", "williamberry@gmail.com"),
+  ("David", "Gardner", "dpgardner10@gmail.com"),
+  ("Rob", "Hunsaker", "hunsaker.rob@gmail.com"),
+  ("Van Allen", "Hurst", "vanallenhurst@gmail.com"),
+  ("Roman", "Salazar", "romansalazar@gmail.com"),
+  ("Vincent", "Smithers", "vincentsmithers@gmail.com"),
+  ("Brian",  "Ward", "brianward@gmail.com"),
+  ("Cooper", "Whitlow", "cooperwhitlow@gmail.com")
 ]
 
 let femaleRoster = [
-  ("Cynthia Whitlatch", "cawhitlatch2@gmail.com"),
-  ("Ashley Johnson", "ashleyjohnson@gmail.com"),
-  ("Cynthia Soto", "cynthiasoto@gmail.com"),
-  ("Lindsey Boggio", "lindseyboggio@gmail.com"),
-  ("Lynn Kuhlman", "lynnkuhlman@gmail.com")
+  ("Cynthia", "Whitlatch", "cawhitlatch2@gmail.com"),
+  ("Ashley", "Johnson", "ashleyjohnson@gmail.com"),
+  ("Cynthia", "Soto", "cynthiasoto@gmail.com"),
+  ("Lindsey", "Boggio", "lindseyboggio@gmail.com"),
+  ("Lynn", "Kuhlman", "lynnkuhlman@gmail.com")
 ]
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet weak var tableView: UITableView!
   
-  @IBOutlet weak var label: UILabel!
-
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -121,23 +119,32 @@ class ViewController: UIViewController {
   }
       //   NEED THIS TO ADD SWIPE CELL TO SHARE/DELETE
   func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
+    
+    if editingStyle == UITableViewCellEditingStyle.Delete {
+//      maleRoster.removeAtIndex(indexPath.row)
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
     }
+  }
   
   func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]! {
     
+    // ************  SWIPE TO DELETE   ***********
+
     let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") {
       (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
       
       let firstActivityItem = maleRoster[indexPath.row]
-      let activityViewController = UIActivityViewController(activityItems: ["Brad"], applicationActivities: nil)
+      let activityViewController = UIActivityViewController(activityItems: ["Filler String"], applicationActivities: nil)
       self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
+    // ************  SWIPE TO SHARE   ***********
+
     let shareAction = UITableViewRowAction(style: .Normal, title: "Share") {
       (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
     
       let secondActivityItem = maleRoster[indexPath.row]
-      let activityViewController = UIActivityViewController(activityItems: ["Brad"], applicationActivities: nil)
+      let activityViewController = UIActivityViewController(activityItems: ["Filler String"], applicationActivities: nil)
       self.presentViewController(activityViewController, animated: true, completion: nil)
     }
     
@@ -170,6 +177,13 @@ class ViewController: UIViewController {
       return 0
   }
   
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let (firstName, lastName, emailRoster) = maleRoster[indexPath.row]
+    performSegueWithIdentifier("detail", sender: nil)
+ //   let destinationViewController = destinationViewController as! DetailViewController
+    
+    
+  }
 //  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //      if section == 0 {
 //        label.text = "Male Students"
@@ -185,13 +199,13 @@ class ViewController: UIViewController {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath:indexPath)
     
     if indexPath.section == 0 {
-      let(nameRoster,emailRoster) = maleRoster[indexPath.row]
-      cell.textLabel?.text = nameRoster
+      let(firstName, lastName, emailRoster) = maleRoster[indexPath.row]
+      cell.textLabel?.text = "\(firstName) \(lastName)"
       cell.detailTextLabel?.text = emailRoster
       
     } else {
-      let(nameRoster,emailRoster) = femaleRoster[indexPath.row]
-      cell.textLabel?.text = nameRoster
+      let(firstName, lastName, emailRoster) = femaleRoster[indexPath.row]
+      cell.textLabel?.text = "\(firstName) \(lastName)"
       cell.detailTextLabel?.text = emailRoster
     
 //      let currentPhoto = photos[indexPath.row]
@@ -201,6 +215,7 @@ class ViewController: UIViewController {
     
     return cell
 }
+  
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "detail" {                 //Use this to check - best practice
@@ -213,11 +228,11 @@ class ViewController: UIViewController {
       
     } else if segue.identifier == "newstudent" {
       
-      var newStudentScene = segue.destinationViewController as! NewStudentViewController
+//      var newStudentScene = segue.destinationViewController as! NewStudentViewController
       
     }
   }
-    
+}
 
 
 //      secondScene.selectedName = "Brad"
@@ -225,7 +240,7 @@ class ViewController: UIViewController {
 //      let selectedRow = selectedIndexPath!.row
 //      let selectedName = names[selectedRow]
 //      secondScene.view.backgroundColor = UIColor.greenColor()
-}
+
 
 
 
