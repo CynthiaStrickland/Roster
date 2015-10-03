@@ -17,7 +17,7 @@ struct Photo {
 
 var photos = [Photo]()
 
-let maleRoster = [
+var maleRoster = [
   ("Jackson", "Chu", "jackson@gmail.com"),
   ("Alan", "", "alan@gmail.com"),
   ("Antonio", "Garcia", "antoniogarcia@gmail.com"),
@@ -32,7 +32,7 @@ let maleRoster = [
   ("Cooper", "Whitlow", "cooperwhitlow@gmail.com")
 ]
 
-let femaleRoster = [
+var femaleRoster = [
   ("Cynthia", "Whitlatch", "cawhitlatch2@gmail.com"),
   ("Ashley", "Johnson", "ashleyjohnson@gmail.com"),
   ("Cynthia", "Soto", "cynthiasoto@gmail.com"),
