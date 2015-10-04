@@ -10,46 +10,36 @@ import UIKit
 import MessageUI
 import Social
 
-struct Photo {
-  var name : String
-  var filename : String
-}
-
 var photos = [Photo]()
 
-var maleRoster = [
-  ("Jackson", "Chu", "jackson@gmail.com"),
-  ("Alan", "", "alan@gmail.com"),
-  ("Antonio", "Garcia", "antoniogarcia@gmail.com"),
-  ("Francisco", "Ragland Jr", "franciscoragland@gmail.com"),
-  ("William", "Berry", "williamberry@gmail.com"),
-  ("David", "Gardner", "dpgardner10@gmail.com"),
-  ("Rob", "Hunsaker", "hunsaker.rob@gmail.com"),
-  ("Van Allen", "Hurst", "vanallenhurst@gmail.com"),
-  ("Roman", "Salazar", "romansalazar@gmail.com"),
-  ("Vincent", "Smithers", "vincentsmithers@gmail.com"),
-  ("Brian",  "Ward", "brianward@gmail.com"),
-  ("Cooper", "Whitlow", "cooperwhitlow@gmail.com")
-]
+var mRoster = [
+  (firstName: "Jackson", lastName: "Chu", email: "jackson@gmail.com", imageName: "Fox300.jpg"),
+  (firstName: "Alan", lastName: "Johnson", email: "alanjohnson@gmail.com", imageName: "Elephant300.jpg"),
+  (firstName: "Antonio", lastName: "Garcia", email: "antoniogarcia@gmail.com", imageName: "Alligator300.jpg"),
+  (firstName: "Francisco", lastName: "Ragland Jr", email: "franciscoragland@gmail.com", imageName: "panda300.jpg"),
+  (firstName: "William", lastName: "Berry", email: "williamberry@gmail.com", imageName: "turtle300.jpg"),
+  (firstName: "David", lastName: "Gardner", email: "dpgardner10@gmail.com", imageName: "Fox300.jpg"),
+  (firstName: "Rob", lastName: "Hunsaker", email: "hunsaker.rob@gmail.com", imageName: "octopus300.jpg"),
+  (firstName: "Van Allen", lastName: "Hurst", email: "vanallenhurst@gmail.com", imageName: "Racoon300.jpg"),
+  (firstName: "Roman", lastName: "Salazar", email: "romansalazar@gmail.com", imageName: "Kangaroo300.jpg"),
+  (firstName: "Vincent", lastName: "Smithers", email: "vincentsmithers@gmail.com", imageName: "Wolf300.jpg"),
+  (firstName: "Brian", lastName: "Ward", email: "brianward@gmail.com", imageName: "Owl300.jpg"),
+  (firstName: "Cooper", lastName: "Whitlow", email: "cooperwhitlow@gmail.com", imageName: "Octopus300.jpg")]
 
-var femaleRoster = [
-  ("Cynthia", "Whitlatch", "cawhitlatch2@gmail.com"),
-  ("Ashley", "Johnson", "ashleyjohnson@gmail.com"),
-  ("Cynthia", "Soto", "cynthiasoto@gmail.com"),
-  ("Lindsey", "Boggio", "lindseyboggio@gmail.com"),
-  ("Lynn", "Kuhlman", "lynnkuhlman@gmail.com")
-]
+var fRoster = [
+  (firstName: "Cynthia", lastName: "Whitlatch", email: "cawhitlatch2@gmail.com", imageName: "Lion300.jpg"),
+  (firstName: "Ashley", lastName: "Johnson", email: "ashleyjohnson@gmail.com", imageName: "Turtle300.jpg"),
+  (firstName: "Cynthia", lastName: "Soto", email: "cynthiasoto@gmail.com", imageName: "Zebra300.jpg"),
+  (firstName: "Lindsey", lastName: "Boggio", email: "lindseyboggio@gmail.com", imageName: "Elephant300.jpg"),
+  (firstName: "Lynn", lastName: "Kuhlman", email: "lynnkuhlman@gmail.com", imageName: "Fox300.jpg")]
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-//        //***** SET NAVIGATION BAR BUTTON PROGRAMMATICALLY
-//    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .Plain, target: self, action: "tappedShare:")
-    
+   
         // ***** Nav Title Image *******
     self.navigationController?.navigationBar
     let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
@@ -58,98 +48,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     imageView.image = image
     navigationItem.titleView = imageView
     
-    var newPhoto = Photo(name:"Fox", filename:"fox300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Lion", filename:"lion300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Panda", filename:"panda300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Tarseir", filename:"tarseir300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Turtle", filename:"turtle300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Octopus", filename:"octopus300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Owl", filename:"owl300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Wolf", filename:"wolf300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Zebra", filename:"zebra300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Elephant", filename:"elephant300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Racoon", filename:"racoon300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Kangaroo", filename:"kangaroo300.jpg")
-    photos.append(newPhoto)
-    
-    newPhoto = Photo(name:"Alligator", filename:"alligator300.jpg")
-    photos.append(newPhoto)
   }
-  
-      // METHOD TO HANDLE SHARE BUTTON -  FACEBOOK .. image, initial text & URL
-  
-//  func tappedShare(sender : AnyObject!) {
-//    let composeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
-//    composeViewController.addImage(UIImage(named: "codefellows30"))
-//    composeViewController.setInitialText("Check out Code Fellows")
-//    composeViewController.addURL(NSURL(string: "http://www.codefellows.com"))
-//      
-//    presentViewController(composeViewController, animated: true, completion:nil)
-  
-//    vc.setInitialText("Look at this great picture!")
-//    vc.addImage(detailImageView.image!)
-//    vc.addURL(NSURL(string: "http://www.photolib.noaa.gov/nssl"))
-    
-//  }
+// MARK: -     TABLEVIEW METHODS
       //   DELETING STUDENT FROM TABLEVIEW BY SWIPING
-  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    return true
-  }
+//  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//    return true
+//  }
       //   NEED THIS TO ADD SWIPE CELL TO SHARE/DELETE
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    
-    if editingStyle == UITableViewCellEditingStyle.Delete {
-//      maleRoster.removeAtIndex(indexPath.row)
-      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-    }
+//    
+//    if editingStyle == UITableViewCellEditingStyle.Delete {
+//      mRoster.removeAtIndex(indexPath.row)
+//      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+//    }
   }
-  
-  func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-  
-    // ************  SWIPE TO DELETE   ***********
-    let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") {
-      (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
-      
-      let firstActivityItem = maleRoster[indexPath.row]
-      let activityViewController = UIActivityViewController(activityItems: ["Filler String"], applicationActivities: nil)
-      self.presentViewController(activityViewController, animated: true, completion: nil)
-    }
-    
-    // ************  SWIPE TO SHARE   ***********
+            // ************  SWIPE TO DELETE   ***********
 
-    let shareAction = UITableViewRowAction(style: .Normal, title: "Share") {
-      (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+  func tableView(tableView: UITableView!, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [AnyObject]! {
     
-      let secondActivityItem = maleRoster[indexPath.row]
-      let activityViewController = UIActivityViewController(activityItems: ["Filler String"], applicationActivities: nil)
+      let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+      _ = mRoster[indexPath.row]
+      let activityViewController = UIActivityViewController(activityItems: ["Brad"], applicationActivities: nil)
       self.presentViewController(activityViewController, animated: true, completion: nil)
+        }
+      
+      let shareAction = UITableViewRowAction(style: .Normal, title: "Share") { (action: UITableViewRowAction!, indexPath: NSIndexPath!) -> Void in
+      _ = mRoster[indexPath.row]
+      let activityViewController = UIActivityViewController(activityItems: ["Brad"], applicationActivities: nil)
+      self.presentViewController(activityViewController, animated: true, completion: nil)
+      }
+      shareAction.backgroundColor = UIColor.blueColor()
+      return [shareAction, deleteAction]
     }
-    
-    shareAction.backgroundColor = UIColor.blueColor()
-    return [shareAction, deleteAction]
-  }
+
 
       //   TITLE FOR HEADER
   func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -167,73 +98,55 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == 0 {
-      
-      return maleRoster.count
-      
+      return mRoster.count
     } else if section == 1 {
-      
-      return femaleRoster.count
+      return fRoster.count
     }
       return 0
   }
-      // *********  DID SELECT ROW AT INDEX ****  Segue for Tuples
   
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let (firstName, lastName, emailRoster) = maleRoster[indexPath.row]
-    performSegueWithIdentifier("detail", sender: nil)
- //   let destinationViewController = destinationViewController as! DetailViewController
-    
-    
-  }
-  
-  
-//  func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//      if section == 0 {
-//        label.text = "Male Students"
-//        label.textColor = UIColor.blueColor()
-//      } else if section == 1 {
-//        label.text = "Female Students"
-//        label.textColor = UIColor.blueColor()
-//      }
-//        return label.text
-//    }
-  
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath:indexPath)
+   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath:indexPath)
     
     if indexPath.section == 0 {
-      let(firstName, lastName, emailRoster) = maleRoster[indexPath.row]
-      cell.textLabel?.text = "\(firstName) \(lastName)"
-      cell.detailTextLabel?.text = emailRoster
-      
-    } else {
-      let(firstName, lastName, emailRoster) = femaleRoster[indexPath.row]
-      cell.textLabel?.text = "\(firstName) \(lastName)"
-      cell.detailTextLabel?.text = emailRoster
+      let(firstName, lastName, email, _) = mRoster[indexPath.row]
+          cell.textLabel?.text = "\(firstName) \(lastName)"
+          cell.detailTextLabel?.text = "\(email)"
+        } else {
+          let(firstName, lastName, email, _) = fRoster[indexPath.row]
+          cell.textLabel?.text = "\(firstName) \(lastName)"
+          cell.detailTextLabel?.text = "\(email)"
     }
-    
     return cell
 }
-    // *********  SEGUE ************
+  
+// MARK: -       SEGUE
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if segue.identifier == "detail" {                 //Use this to check - best practice
+    if segue.identifier == "detail" {
       
       let secondScene = segue.destinationViewController as! DetailViewController
       
       let selectedIndexPath = self.tableView.indexPathForSelectedRow
       let selectedRow = selectedIndexPath!.row
       let selectedPhoto = photos[selectedRow]
-      
-//      destinationViewController.selectedPhoto = selectedPhoto
       secondScene.currentPhoto = selectedPhoto
       
     } else if segue.identifier == "newstudent" {
       
 //      var newStudentScene = segue.destinationViewController as! NewStudentViewController
-      
+      }
     }
   }
-}
+
+
+
+
+
+
+
+
+
+
 
 
 //      secondScene.selectedName = "Brad"
@@ -242,12 +155,29 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 //      let selectedName = names[selectedRow]
 //      secondScene.view.backgroundColor = UIColor.greenColor()
 
+// *********  DID SELECT ROW AT INDEX ****  Segue for Tuples
+//  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//    let (firstName, lastName, emailRoster) = maleRoster[indexPath.row]
+//    performSegueWithIdentifier("detail", sender: nil)
+//   let destinationViewController = destinationViewController as! DetailViewController
 
 
+//            //***** SET NAVIGATION BAR BUTTON PROGRAMMATICALLY
+//    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .Plain, target: self, action: "tappedShare:")
 
 
-
-
+//             // ******** METHOD TO HANDLE SHARE BUTTON -  FACEBOOK .. image, initial text & URL
+//  func tappedShare(sender : AnyObject!) {
+//    let composeViewController = SLComposeViewController(forServiceType: SLServiceTypeFacebook)
+//    composeViewController.addImage(UIImage(named: "codefellows30"))
+//    composeViewController.setInitialText("Check out Code Fellows")
+//    composeViewController.addURL(NSURL(string: "http://www.codefellows.com"))
+//
+//    presentViewController(composeViewController, animated: true, completion:nil)
+//    vc.setInitialText("Look at this great picture!")
+//    vc.addImage(detailImageView.image!)
+//    vc.addURL(NSURL(string: "http://www.photolib.noaa.gov/nssl"))
+//  }
 
 
 

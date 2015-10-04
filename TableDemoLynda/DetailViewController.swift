@@ -26,14 +26,10 @@ class DetailViewController: UIViewController {
     firstName.text = selectedFirstName
     lastName.text = selectedLastName
     
-    let image = UIImage(named: currentPhoto!.filename)    //creating a property to hold image
+    let image = UIImage(named: currentPhoto!.filename)
     studentImage.image = image
    
-    self.title = currentPhoto!.name
-  }
-  
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
+//    self.title = currentPhoto!.name
   }
   
   @IBAction func sendMessage(sender: UIButton) {

@@ -9,10 +9,22 @@
 import UIKit
 import MessageUI
 
+struct Photo {
+  var name : String
+  var filename : String
+}
+
+struct Roster {
+  var firstName : String?
+  var lastName : String?
+  var email: String?
+  var imageName : String?
+  
+}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  
   var window: UIWindow?
 
 
