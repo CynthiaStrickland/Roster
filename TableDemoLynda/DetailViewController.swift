@@ -13,8 +13,8 @@ class DetailViewController: UIViewController {
   
   var selectedFirstName = "None"
   var selectedLastName = "None"
-  var selectedPhoto : Photo?
-  var currentPhoto : Photo?
+  var selectedPhoto : Roster?
+  var currentPhoto : Roster?
 
   @IBOutlet weak var firstName: UILabel!
   @IBOutlet weak var lastName: UILabel!
@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
     firstName.text = selectedFirstName
     lastName.text = selectedLastName
     
-    let image = UIImage(named: currentPhoto!.filename)
+    let image = UIImage(named: currentPhoto!.imageName!)
     studentImage.image = image
    
 //    self.title = currentPhoto!.name

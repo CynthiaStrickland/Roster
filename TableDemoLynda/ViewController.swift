@@ -124,24 +124,24 @@ class ViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "detail" {
       
-      let secondScene = segue.destinationViewController as! DetailViewController
+      let detailVC = segue.destinationViewController as! DetailViewController
       
       let selectedIndexPath = self.tableView.indexPathForSelectedRow
       let selectedRow = selectedIndexPath!.row
-      let selectedPhoto = photos[selectedRow]
-      secondScene.currentPhoto = selectedPhoto
+      let selectedPhoto = mRoster[selectedRow].imageName
+      detailVC.currentPhoto = selectedPhoto
+      
+//      let selectedIndexPath = self.tableView.indexPathForSelectedRow
+//      let selectedRow = selectedIndexPath!.row
+//      let roster = mRoster[selectedRow]
+//      detailVC.roster = roster
       
     } else if segue.identifier == "newstudent" {
       
-//      var newStudentScene = segue.destinationViewController as! NewStudentViewController
+    var newStudentScene = segue.destinationViewController as! NewStudentViewController
       }
     }
   }
-
-
-
-
-
 
 
 

@@ -10,8 +10,8 @@ import UIKit
 import MessageUI
 
 struct Photo {
-  var name : String
-  var filename : String
+  var name : String?
+  var filename : String?
 }
 
 struct Roster {
