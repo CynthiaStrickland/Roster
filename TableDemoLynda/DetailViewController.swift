@@ -7,12 +7,11 @@
 import UIKit
 import MessageUI
 
-
-
 class DetailViewController: UIViewController {
   
   var selectedFirstName = "None"
   var selectedLastName = "None"
+  
   var selectedPhoto : Roster?
   var currentPhoto : Roster?
 
@@ -25,11 +24,11 @@ class DetailViewController: UIViewController {
     
     firstName.text = selectedFirstName
     lastName.text = selectedLastName
-    
+
     let image = UIImage(named: currentPhoto!.imageName!)
     studentImage.image = image
    
-//    self.title = currentPhoto!.name
+    self.title = currentPhoto!.firstName
   }
   
   @IBAction func sendMessage(sender: UIButton) {
