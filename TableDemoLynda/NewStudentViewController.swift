@@ -25,14 +25,26 @@ class NewStudentViewController: UIViewController {
   
   override func viewDidLoad() {
       super.viewDidLoad()
-    
-    let newFirstName = NSUserDefaults.standardUserDefaults()
-    newFirstName.text = newFirstName.stringArrayForKey("savedFirstName")
-    newLastName.text = newLastName.stringArrayForKey("savedLastName")
-    newEmail.text = newEmail.stringArrayForKey("savedEmail")
-    
-      
   }
+  
+  func buttonClicked(sender: AnyObject) {
+    if mySwitch.on {
+      
+      mySwitch.setOn(false, animated:true)
+      mRoster.append(firstName: newFirstName)
+      mRoster.append(lastName: newLastName)
+      mRoster.append(email: newEmail)
+      
+    } else {
+      
+      mySwitch.setOn(true, animated:true)
+      fRoster.append(firstName: newFirstNAme)
+      fRoster.append(lastName: newLastName)
+      fRoster.append(email: newEmail)
+    }
+
+  func buttonClicked(sender: AnyObject) {
+
   
   @IBAction func saveData(sender: AnyObject) {
     let firstNameText = newFirstName.text
@@ -46,20 +58,9 @@ class NewStudentViewController: UIViewController {
     
     let alert = UIAlertController(title: "Saved", message: "Your text has been saved", preferredStyle: .Alert)
     alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
-    
-    
+    self.presentViewController(alert, animated: true, completion: nil)
     
   }
-  
-  
 }
-//  func save()
-//  NSUserDefaults.standardUserDefaults().setObject(value: objects, forKey: "")
-//  NSUserDefaults.standardUserDefaults().synchronize()
-//}
 
-//  func loadData()
-//  if let loadedData = NSUserDefaults.standardUserDefaults().arrayForKey(defaultName: String) as? [String] {
-//  object = loadedData
-//}
 
