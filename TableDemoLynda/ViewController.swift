@@ -10,7 +10,7 @@ import UIKit
 import MessageUI
 import Social
 
-var photos = [Photo]()
+let photos = [Photo]()
 
 var mRoster = [
   (firstName: "Jackson", lastName: "Chu", email: "jackson@gmail.com", imageName: "Fox300.jpg"),
@@ -51,16 +51,16 @@ class ViewController: UIViewController {
   }
 // MARK: -     TABLEVIEW METHODS
       //   DELETING STUDENT FROM TABLEVIEW BY SWIPING
-//  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//    return true
-//  }
+  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    return true
+  }
       //   NEED THIS TO ADD SWIPE CELL TO SHARE/DELETE
   func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//    
-//    if editingStyle == UITableViewCellEditingStyle.Delete {
-//      mRoster.removeAtIndex(indexPath.row)
-//      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-//    }
+    
+    if editingStyle == UITableViewCellEditingStyle.Delete {
+      mRoster.removeAtIndex(indexPath.row)
+      tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
   }
             // ************  SWIPE TO DELETE   ***********
 
@@ -123,23 +123,31 @@ class ViewController: UIViewController {
 // MARK: -       SEGUE
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "detail" {
-      
-      let detailVC = segue.destinationViewController as! DetailViewController
-      
-      let selectedIndexPath = self.tableView.indexPathForSelectedRow
-      let selectedRow = selectedIndexPath!.row
-      let selectedPhoto = mRoster[selectedRow].imageName
-      detailVC.currentPhoto = selectedPhoto
+
+        let secondScene = segue.destinationViewController as! DetailViewController
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+        let selectedPhoto = photos[indexPath.row]
+          
+//        secondScene.currentPhoto = selectedPhoto
+      }
+    }
+//          
+//      let detailVC = segue.destinationViewController as! DetailViewController
+//      
+//      let selectedIndexPath = self.tableView.indexPathForSelectedRow
+//      let selectedRow = selectedIndexPath!.row
+//      let selectedPhoto = mRoster[selectedRow].imageName
+//      detailVC.selectedPhoto = selectedPhoto
       
 //      let selectedIndexPath = self.tableView.indexPathForSelectedRow
 //      let selectedRow = selectedIndexPath!.row
 //      let roster = mRoster[selectedRow]
 //      detailVC.roster = roster
       
-    } else if segue.identifier == "newstudent" {
-      
-    var newStudentScene = segue.destinationViewController as! NewStudentViewController
-      }
+//    } else if segue.identifier == "newstudent" {
+//      
+//    var newStudentScene = segue.destinationViewController as! NewStudentViewController
+//      }
     }
   }
 

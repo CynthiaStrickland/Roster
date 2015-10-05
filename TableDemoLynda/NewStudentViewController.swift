@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+
 
 class NewStudentViewController: UIViewController {
 
@@ -14,38 +16,50 @@ class NewStudentViewController: UIViewController {
   var lastName = ""
   var email = ""
   
+  @IBOutlet weak var newFirstName: UITextField!
+  @IBOutlet weak var newEmail: UITextField!
+  @IBOutlet weak var newLastName: UITextField!
+  
   @IBOutlet weak var male: UISwitch!
   @IBOutlet weak var female: UISwitch!
   
-  @IBAction func cancelBarButton(sender: AnyObject) {
-//    dismissViewControllerAnimated(flag: true, completion: nil)
-  }
-  
-  @IBAction func doneBarButton(sender: AnyObject) {
-    
-  }
-  
   override func viewDidLoad() {
       super.viewDidLoad()
+    
+    let newFirstName = NSUserDefaults.standardUserDefaults()
+    newFirstName.text = newFirstName.stringArrayForKey("savedFirstName")
+    newLastName.text = newLastName.stringArrayForKey("savedLastName")
+    newEmail.text = newEmail.stringArrayForKey("savedEmail")
+    
       
   }
   
-//      navigationItem.title = "New Student"
-//      navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: "tappedDone:")
-//      @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
-//        
-//      }
-//      navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .Plain, target: self, action: "tappedCancel:")
-//      
-
-
-//  func tappedDone(sender : AnyObject!)  {
-//      
-//    
-//  }
-//  
-//  func tappedCancel(sender: AnyObject!) {
-//    
-//  }
+  @IBAction func saveData(sender: AnyObject) {
+    let firstNameText = newFirstName.text
+    let lastNameText = newLastName.text
+    let emailText = newEmail.text
+    
+    NSUserDefaults.standardUserDefaults().setObject(firstNameText, forKey: "savedFirstName")
+    NSUserDefaults.standardUserDefaults().setObject(lastNameText, forKey: "savedLastName")
+    NSUserDefaults.standardUserDefaults().setObject(emailText, forKey: "savedEmail")
+    NSUserDefaults.standardUserDefaults().synchronize()
+    
+    let alert = UIAlertController(title: "Saved", message: "Your text has been saved", preferredStyle: .Alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: .Cancel, handler: nil))
+    
+    
+    
   }
+  
+  
+}
+//  func save()
+//  NSUserDefaults.standardUserDefaults().setObject(value: objects, forKey: "")
+//  NSUserDefaults.standardUserDefaults().synchronize()
+//}
+
+//  func loadData()
+//  if let loadedData = NSUserDefaults.standardUserDefaults().arrayForKey(defaultName: String) as? [String] {
+//  object = loadedData
+//}
 

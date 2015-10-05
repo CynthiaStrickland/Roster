@@ -24,11 +24,11 @@ class DetailViewController: UIViewController {
     
     firstName.text = selectedFirstName
     lastName.text = selectedLastName
-
+   
     let image = UIImage(named: currentPhoto!.imageName!)
     studentImage.image = image
-   
-    self.title = currentPhoto!.firstName
+    
+    self.title = currentPhoto!.imageName
   }
   
   @IBAction func sendMessage(sender: UIButton) {
