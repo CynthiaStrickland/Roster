@@ -12,9 +12,9 @@ import Foundation
 
 class NewStudentViewController: UIViewController {
 
-  var firstName = ""
-  var lastName = ""
-  var email = ""
+  var firstName: String?
+  var lastName:  String?
+  var email: String?
   
   @IBOutlet weak var newFirstName: UITextField!
   @IBOutlet weak var newEmail: UITextField!
@@ -26,26 +26,26 @@ class NewStudentViewController: UIViewController {
   override func viewDidLoad() {
       super.viewDidLoad()
   }
-  
-  func buttonClicked(sender: AnyObject) {
-    if mySwitch.on {
-      
-      mySwitch.setOn(false, animated:true)
-      mRoster.append(firstName: newFirstName)
-      mRoster.append(lastName: newLastName)
-      mRoster.append(email: newEmail)
-      
-    } else {
-      
-      mySwitch.setOn(true, animated:true)
-      fRoster.append(firstName: newFirstNAme)
-      fRoster.append(lastName: newLastName)
-      fRoster.append(email: newEmail)
-    }
+//  
+//  func buttonClicked(sender: AnyObject) {
+//    if mySwitch.on {
+//      
+//      mySwitch.setOn(false, animated:true)
+//      mRoster.append(firstName: newFirstName)
+//      mRoster.append(lastName: newLastName)
+//      mRoster.append(email: newEmail)
+//      
+//    } else {
+//      
+//      mySwitch.setOn(true, animated:true)
+//      fRoster.append(firstName: newFirstNAme)
+//      fRoster.append(lastName: newLastName)
+//      fRoster.append(email: newEmail)
+//    }
 
-  func buttonClicked(sender: AnyObject) {
-
-  
+//  func SaveButtonClicked(sender: AnyObject) {
+//      }
+//  
   @IBAction func saveData(sender: AnyObject) {
     let firstNameText = newFirstName.text
     let lastNameText = newLastName.text
@@ -61,6 +61,11 @@ class NewStudentViewController: UIViewController {
     self.presentViewController(alert, animated: true, completion: nil)
     
   }
+  
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    self.view.endEditing(true)
+  }
+  
 }
 
 

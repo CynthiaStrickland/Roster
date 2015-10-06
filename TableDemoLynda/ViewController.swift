@@ -10,8 +10,6 @@ import UIKit
 import MessageUI
 import Social
 
-let photos = [Photo]()
-
 var mRoster = [
   (firstName: "Jackson", lastName: "Chu", email: "jackson@gmail.com", imageName: "Fox300.jpg"),
   (firstName: "Alan", lastName: "Johnson", email: "alanjohnson@gmail.com", imageName: "Elephant300.jpg"),
@@ -124,14 +122,40 @@ class ViewController: UIViewController {
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "detail" {
 
-        let secondScene = segue.destinationViewController as! DetailViewController
+        let detailVC = segue.destinationViewController as! DetailViewController
         if let indexPath = self.tableView.indexPathForSelectedRow {
-        let selectedPhoto = photos[indexPath.row]
-          
-//        secondScene.currentPhoto = selectedPhoto
+        let selectedPhoto = mRoster[indexPath.row].imageName
+        detailVC.currentPhoto?.image = selectedPhoto
       }
     }
-//          
+  }
+}
+
+
+//var secondScene = segue.destinationViewController as! DetailViewController
+//+    if let indexPath = self.tableView.indexPathForSelectedRow() {
+//  +    let selectedPhoto = photos[indexPath.row]
+//    +    secondScene.currentPhoto = selectedPhoto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
 //      let detailVC = segue.destinationViewController as! DetailViewController
 //      
 //      let selectedIndexPath = self.tableView.indexPathForSelectedRow
@@ -148,8 +172,8 @@ class ViewController: UIViewController {
 //      
 //    var newStudentScene = segue.destinationViewController as! NewStudentViewController
 //      }
-    }
-  }
+//    }
+//  }
 
 
 

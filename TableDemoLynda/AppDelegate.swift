@@ -18,7 +18,7 @@ struct Roster {
   var firstName : String?
   var lastName : String?
   var email: String?
-  var imageName : String?
+  var imageName : UIImage?
   
 }
 
