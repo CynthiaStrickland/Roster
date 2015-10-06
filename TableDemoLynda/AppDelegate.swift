@@ -9,12 +9,12 @@
 import UIKit
 import MessageUI
 
-struct Photo {
+class Photo {
   var name : String?
   var filename : String?
 }
 
-struct Roster {
+class Roster {
   var firstName : String?
   var lastName : String?
   var email: String?
