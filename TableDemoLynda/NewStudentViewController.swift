@@ -26,26 +26,7 @@ class NewStudentViewController: UIViewController {
   override func viewDidLoad() {
       super.viewDidLoad()
   }
-//  
-//  func buttonClicked(sender: AnyObject) {
-//    if mySwitch.on {
-//      
-//      mySwitch.setOn(false, animated:true)
-//      mRoster.append(firstName: newFirstName)
-//      mRoster.append(lastName: newLastName)
-//      mRoster.append(email: newEmail)
-//      
-//    } else {
-//      
-//      mySwitch.setOn(true, animated:true)
-//      fRoster.append(firstName: newFirstNAme)
-//      fRoster.append(lastName: newLastName)
-//      fRoster.append(email: newEmail)
-//    }
-
-//  func SaveButtonClicked(sender: AnyObject) {
-//      }
-//  
+ 
   @IBAction func saveData(sender: AnyObject) {
     let firstNameText = newFirstName.text
     let lastNameText = newLastName.text

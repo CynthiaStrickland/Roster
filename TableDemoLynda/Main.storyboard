@@ -152,36 +152,6 @@
                                     <rect key="frame" x="34" y="245" width="330" height="30"/>
                                 </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bon-dU-3hH">
-                                <rect key="frame" x="96" y="299" width="159" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="105" y="299" width="159" height="36"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="htl-AS-GhE">
-                                <rect key="frame" x="96" y="352" width="159" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="105" y="352" width="159" height="36"/>
-                                </variation>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e0q-CT-u2M">
-                                <rect key="frame" x="25" y="301" width="51" height="31"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="34" y="301" width="51" height="31"/>
-                                </variation>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jKS-AI-ZC6">
-                                <rect key="frame" x="25" y="354" width="51" height="31"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="34" y="354" width="51" height="31"/>
-                                </variation>
-                            </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2t-xf-z3s">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
@@ -212,8 +182,6 @@
                     <navigationItem key="navigationItem" title="New Student" id="XvX-G4-Vtk"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="female" destination="jKS-AI-ZC6" id="D51-vp-goU"/>
-                        <outlet property="male" destination="e0q-CT-u2M" id="9xo-pM-s0w"/>
                         <outlet property="newEmail" destination="UMt-44-luc" id="zuH-kZ-724"/>
                         <outlet property="newFirstName" destination="v0b-1X-sj7" id="yA9-yu-bXe"/>
                         <outlet property="newLastName" destination="MOY-bj-tES" id="Psk-6x-s8O"/>
