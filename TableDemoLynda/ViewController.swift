@@ -125,17 +125,22 @@ class ViewController: UIViewController {
         let detailVC = segue.destinationViewController as! DetailViewController
         if let indexPath = self.tableView.indexPathForSelectedRow {
         let selectedPhoto = mRoster[indexPath.row].imageName
-        detailVC.currentPhoto?.image = selectedPhoto
+        detailVC.currentPhoto = selectedPhoto
       }
     }
   }
 }
 
 
+
+
+
+//
+//
 //var secondScene = segue.destinationViewController as! DetailViewController
-//+    if let indexPath = self.tableView.indexPathForSelectedRow() {
-//  +    let selectedPhoto = photos[indexPath.row]
-//    +    secondScene.currentPhoto = selectedPhoto
+//    if let indexPath = self.tableView.indexPathForSelectedRow() {
+//      let selectedPhoto = photos[indexPath.row]
+//      secondScene.currentPhoto = selectedPhoto
 
 
 

@@ -21,6 +21,8 @@ class NewStudentViewController: UIViewController {
   @IBOutlet weak var newLastName: UITextField!
   @IBOutlet weak var genderTextField: UITextField!
 
+  var itemsArray = NSUserDefaults.standardUserDefaults().arrayForKey("items")
+
  
   @IBAction func saveData(sender: AnyObject) {
     
@@ -41,9 +43,10 @@ class NewStudentViewController: UIViewController {
     
   }
   
-  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    
   }
   
     // ******* This will resign the keyboard if screen is touched

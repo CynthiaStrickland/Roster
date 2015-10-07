@@ -11,7 +11,7 @@ class DetailViewController: UIViewController {
   
   var selectedFirstName = "None"
   var selectedLastName = "None"  
-  var currentPhoto : UIImage?
+  var currentPhoto : String?
 
   @IBOutlet weak var firstName: UILabel!
   @IBOutlet weak var lastName: UILabel!
@@ -22,12 +22,12 @@ class DetailViewController: UIViewController {
     
     firstName.text = selectedFirstName
     lastName.text = selectedLastName
-    studentImage.image = currentPhoto
 
-    let image = UIImage(names: "\(currentPhoto.imageName)")
+    let image = UIImage(named: currentPhoto!)
     studentImage.image = image
-      
-//    self.title = currentPhoto!.image
+    
+    self.title = currentPhoto!
+    
   }
   
   @IBAction func sendMessage(sender: UIButton) {
